@@ -15,7 +15,7 @@ setuptools.setup(
     description=(
         'A couple of utilities to help with'
         'building PyVISA instruments.'
-    )
+    ),
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/bfichera/InstrumentsLib',
