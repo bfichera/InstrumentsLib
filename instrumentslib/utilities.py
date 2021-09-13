@@ -18,6 +18,8 @@ cfg = {
 _default_unprotected_config = r"""{
     "lock":false,
     "resource_kwargs":{
+        "read_termination":"\r",
+        "write_termination":"\r"
     }
 }
 """
@@ -37,6 +39,7 @@ def _get_unprotected_config_path(instrument_name):
 
 def get_instrument_cfg(instrument_name):
     """Retrieves instrument configuration files from default filepaths.
+
     Creates the file if it doesn't exist.
 
     Parameters
@@ -46,8 +49,8 @@ def get_instrument_cfg(instrument_name):
     Returns
     -------
     cfg : dict
-    """
 
+    """
     protected_config_path = _get_protected_config_path(instrument_name)
     unprotected_config_path = _get_unprotected_config_path(instrument_name)
 

@@ -6,7 +6,25 @@ from .utilities import (
 
 
 def instrument(resource_kwargs, instrument_name):
+    """Decorator for custom instrument classes.
 
+    Handles communication with a local config file to define resource keywords
+    like ``write_termination`` and ``read_termination``, and implements
+    locking the instrument virtually in between calls to ``open()`` and
+    ``close()``. Also adds a ``configure`` method which sets attributes
+    defined in the ``resource_kwargs`` parameter.
+
+    Parameters
+    ----------
+    resource_kwargs : dict
+        ``dict`` of keyword arguments to pass to
+        ``pyvisa.ResourceManager.open_resource``. May include parameters like
+        ``write_termination`` and ``read_termination``..
+
+    instrument_name : str
+        Name of the instrument.
+
+    """
     conf_unprotected_filename = _get_unprotected_config_path(instrument_name)
     _open = open
 
