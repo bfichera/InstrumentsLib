@@ -27,7 +27,7 @@ _default_unprotected_config = r"""{
 
 def _get_protected_config_path(instrument_name):
     return Path(
-        user_config_dir('instrumlib'),
+        user_config_dir('instrumentslib'),
     ) / instrument_name / 'conf-protected.py'
 
 
