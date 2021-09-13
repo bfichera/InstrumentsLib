@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 _default_protected_config = r"""import pyvisa
 
 cfg = {
-    'InstrumentSubclass':pyvisa.resources.serial.SerialInstrument,
+    'InstrumentParentClass':pyvisa.resources.serial.SerialInstrument,
 }
 """
 
